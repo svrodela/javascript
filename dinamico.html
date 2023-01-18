@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        p{
+            transition: 2s all;
+        }
+    </style>
+  </head>
+  <body>
+    <main>
+      <input type="text" id="numero1" />
+      <input type="text" id="numero2" />
+      <input type="text" id="numero3" />
+      <button id="boton">Numero Mayor</button>
+      <p id="feedback"></p>
+    </main>
+    <script>
+        window.addEventListener("load",function(){
+
+        });
+      let reButton = document.getElementById("boton");
+      let refFeed = document.getElementById("feedback");
+
+      reButton.addEventListener("click", function () {
+        onClick();
+      });
+      function onClick() {
+        // console.log(n1);
+        let n1 = parseInt(document.getElementById("numero1").value);
+        let n2 = parseInt(document.getElementById("numero2").value);
+        let n3 = parseInt(document.getElementById("numero3").value);
+        if(isNaN(n1) ||  isNaN(n2) || isNaN(n3))
+        {
+            refFeed.style.color="red";
+            refFeed.innerText="Agregar un valor numérico";
+        }else{
+            refFeed.style.color="green";
+        if (n1 > n2 && n1 > n3) {
+            refFeed.innerText="El numero mayor es:" + n1;
+        } else if (n2 > n1 && n2 > n3) {
+            refFeed.innerText="El numero mayor es:" + n2;
+        } else {
+            refFeed.innerText="El numero mayor es:" + n3;
+        }
+    }
+}
+      
+    </script>
+  </body>
+</html>
